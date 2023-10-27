@@ -3,7 +3,7 @@
 
 # Description
 
-This Python project aims to fetch stock data for specific tickers and perform various analyses including normalization, calculation of Value-at-Risk (VaR), Conditional Value-at-Risk (CVaR), and Topological Data Analysis (TDA) using persistent homology. The program also plots the stock data and persistence diagrams for better visualization.
+This research aims to fetch stock data for specific tickers and perform various analyses including normalization, calculation of Value-at-Risk (VaR), Conditional Value-at-Risk (CVaR), and Topological Data Analysis (TDA) using persistent homology. The program also plots the stock data and persistence diagrams for better visualization.
 
 ## Dependencies
 
