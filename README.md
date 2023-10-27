@@ -1,42 +1,68 @@
 
 # Topological Risk Analysis
 
-## Introduction
+# Description
 
-This Python script aims to simulate and analyze topological risk in financial assets. It employs statistical models and various libraries to generate simulated historical pricing data, among other functionalities.
+This Python project aims to fetch stock data for specific tickers and perform various analyses including normalization, calculation of Value-at-Risk (VaR), Conditional Value-at-Risk (CVaR), and Topological Data Analysis (TDA) using persistent homology. The program also plots the stock data and persistence diagrams for better visualization.
 
 ## Dependencies
 
-- Python 3.x
-- NumPy
-- Pandas
-- Matplotlib
-- SciPy
+- yfinance
+- numpy
+- matplotlib
+- gudhi
+- scipy
 
-## Features
+You can install these dependencies using pip:
 
-- Simulates historical pricing data for a given number of assets and observations.
-- Employs statistical models for risk analysis.
-- Visualizes the results using Matplotlib.
+```
+pip install yfinance numpy matplotlib gudhi scipy
+```
+
+## Functions
+
+### `fetch_stock_data(ticker, period="1y")`
+
+Fetches the stock data for a given `ticker` and `period`.
+
+### `normalize_time_series(time_series)`
+
+Normalizes the time-series data between 0 and 1.
+
+### `calculate_returns(time_series)`
+
+Calculates the daily returns of a stock based on its time series.
+
+### `calculate_var_cvar(returns, confidence_level=0.95)`
+
+Calculates VaR and CVaR based on the given returns and confidence level.
+
+### `compute_persistent_homology(time_series, window_size=10)`
+
+Computes persistent homology for the time series.
+
+### `plot_persistence_diagrams(diagrams)`
+
+Plots the persistence diagrams.
+
+### `clean_array(arr)`
+
+Cleans the array by removing NaN and infinite values.
 
 ## How to Run
 
-1. Make sure you have all the dependencies installed.
-2. Download the `Topological Risk.py` script.
-3. Run the script using the command: `python Topological Risk.py`
+1. Clone this repository.
+2. Run `pip install -r requirements.txt` to install dependencies.
+3. Execute the script using `python <script_name>.py`.
 
-## Usage Example
+## Output
 
-```bash
-python Topological Risk.py
-```
-
-This will execute the script and perform the risk analysis based on the predefined parameters in the script.
-
-## Contributing
-
-If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
+- Prints VaR and CVaR values for each stock at a 95% confidence interval.
+- Plots the persistence diagrams for each stock.
+- Computes and prints the Euclidean distance between the baseline and stress scenarios for each stock.
 
 ## License
 
-MIT License
+This project is open-source and available under the MIT License.
+
+
